@@ -18,6 +18,14 @@ public class Temperatura {
 	}
 	
 	//METHODS
+	
+	public Double getGrados() {
+		return this.grados;
+	}
+	
+	public Escala getEscala() {
+		return this.escala;
+	}
 	public String toString() {
 		
 		String ans = this.grados.toString();
@@ -25,6 +33,7 @@ public class Temperatura {
 		switch(this.escala) {
 			case CELCIUS:{
 				ans+=" °C";
+				break;
 			}
 			case FAHRENHEIT:{
 				ans+=" °F";
@@ -81,6 +90,12 @@ public class Temperatura {
 		}
 	}
 	
+	public boolean lessThan(Temperatura t) {
+		return this.asCelcius() < t.asCelcius();
+	}
+	public boolean GreaterThan(Temperatura t) {
+		return this.asCelcius() > t.asCelcius();
+	}
 	
 	
 }
